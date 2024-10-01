@@ -39,13 +39,20 @@ Running tests on CI/CD server
 
 ### Dependencies
 1. Install python and venv
-2. Create python virtual environment `python -m venv venv`
+2. (Optional) Create python virtual environment `python -m venv venv` - no python dependencies to install
+
 
 ### Run tests
-To run all tests type `python -m unittest`
+To run all tests from the command line: `python -m unittest`
 
 
 ## Considerations
 1. All input data is valid and in the correct format. Error handling could be a future follow-up stories.
-2. Off by one problem. With a grid size of say 5,3 would the robot be allowed on position 5,3 or is that considered off the grid?
+2. ~~Off by one problem. With a grid size of say 5,3 would the robot be allowed on position 5,3 or is that considered off the grid?~~ Answered by sample data.
 3. If the grid size is above 50 in either direction should we error or default to 50?
+
+## TODO
+1. Handle edge cases, invalid input data etc.
+2. Handle code for when grid size > 50 or instruction size > 100
+3. Add a `main` method to run the program handle the input format. At the moment the method `move_robot` has to be called for each robot and its instructions.
+4. Refactor `grid_size` and `robot_scent` as these are linked. That is, if the grid size changes the robot scent values may not be applicable. 
