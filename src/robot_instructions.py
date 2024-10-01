@@ -1,4 +1,4 @@
-from src.parser import parse
+from src.parser import parse_initial_position, parse_grid
 
 right_turn = {
     'N': 'E',
@@ -20,8 +20,9 @@ def rotate(orientation: str, instruction: str) -> str:
     return left_turn[orientation]  # Out of scope: Need to handle case when orientation is not L or R
 
 
-def move(initial_position: str, instructions: str) -> str:
-    x, y, orientation = parse(initial_position)
+def move(initial_position: str, instructions: str, grid_size='10 10') -> str:
+    max_x, max_y = parse_grid(grid_size)
+    x, y, orientation = parse_initial_position(initial_position)
     for instruction in instructions:
         if instruction == 'F':
             if orientation == 'E':
@@ -32,6 +33,8 @@ def move(initial_position: str, instructions: str) -> str:
                 y += 1
             elif orientation == 'S':
                 y -= 1
+            if x < 0 or y < 0 or x >= max_x or y >= max_y:
+                return f'{x} {y} {orientation} LOST'
         else:
             orientation = rotate(orientation, instruction)
     return f'{x} {y} {orientation}'

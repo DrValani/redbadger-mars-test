@@ -1,6 +1,6 @@
 import unittest
 
-from src.parser import parse
+from src.parser import parse_initial_position
 from src.robot_instructions import rotate
 
 

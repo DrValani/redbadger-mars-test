@@ -43,3 +43,8 @@ Running tests on CI/CD server
 
 ### Run tests
 To run all tests type `python -m unittest`
+
+
+## Considerations
+1. All input data is valid and in the correct format. Error handling could be a future follow-up stories.
+2. Off by one problem. With a grid size of say 5,3 would the robot be allowed on position 5,3 or is that considered off the grid?
