@@ -2,14 +2,19 @@
 
 ## Business Value and Risks
 
-In this case, I would imagine the Robots a very expensive and the client would want to minimise the number of robots being lost or damaged. There are other cost considerations to, such as optimising fuel consumption the robots, and ensuring they can explore as much of the planet as possible. 
+Before starting a project/task I find it important to understand the business needs, timelines and risks. This allows us to determine the level of quality vs feature development we need. In this case, I would imagine that the robots are very expensive and we should minimise the number of robots being lost or damaged. There could be other cost implications to consideration too, such as optimising fuel consumption the robots ie. replacing three left turns with one right. 
+
+But to start off with, we need a working robot that can follow instructions. Given the nature of the edge cases, I have choosen to use TDD to build the solution. My first few commits will be micro commits to demonstrate the different stages of TDD. 
+
+The emphasis is on having working well tested code. Due to time considerations, I have not taken into account the user interface, eg the sample input could be read from a file, or an api call is made.   
 
 ## Approach
 
 My approach would be to break down the problem into a smaller set of iterable deliverables/features. Designed to give early feedback and be able to adapt to business requirements. 
 
 
-1. RB-002: Make the robots move.
+### 1. RB-002: Make the robots move.
+
 Constraints: 
    - Only 1 robot is allowed on the grid. No previous robots have been lost and there are no scents on the grid.
    - The robot moves on a grid without any boundaries. ie It cannot be lost. 
@@ -19,17 +24,16 @@ Acceptance criteria:
   - The robot accepts a list of string instructions to move it forward, left and right.
   - The final position and orientation of the robot is printed out in the format x y D
 
-2. RB-003: Robots can only move on a fixed grid size
+### 2. RB-003: Robots can only move on a fixed grid size
 
 Acceptance criteria:
   - Maximum co-ordinate size is 50. -- Taking out of scope. Would need to know how to handle a grid size of over 50?
   - First line of input determines the grid size. 
 
-3. RB-004: Lost robots leave a scent so other robots do not get lost in the same position
+### 3. RB-004: Lost robots leave a scent so other robots do not get lost in the same position
 
 
-Non-functional stories:
-1. RB-001: Set up project - discuss language, tech stack, architecture options with the client. 
+### 4. RB-001: Set up project - discuss language, tech stack, architecture options with the client. 
 Acceptance Criteria:
    - Able to run project and tests
 Out of scope:
