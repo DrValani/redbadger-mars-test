@@ -22,7 +22,7 @@ Acceptance criteria:
 2. RB-003: Robots can only move on a fixed grid size
 
 Acceptance criteria:
-  - Maximum co-ordinate size is 50.
+  - Maximum co-ordinate size is 50. -- Taking out of scope. Would need to know how to handle a grid size of over 50?
   - First line of input determines the grid size. 
 
 3. RB-004: Lost robots leave a scent so other robots do not get lost in the same position
@@ -48,3 +48,4 @@ To run all tests type `python -m unittest`
 ## Considerations
 1. All input data is valid and in the correct format. Error handling could be a future follow-up stories.
 2. Off by one problem. With a grid size of say 5,3 would the robot be allowed on position 5,3 or is that considered off the grid?
+3. If the grid size is above 50 in either direction should we error or default to 50?
