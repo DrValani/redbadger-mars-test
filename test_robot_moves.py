@@ -2,9 +2,11 @@ import unittest
 
 
 def move(instructions: str):
-    if instructions == 'FF':
-        return '0 2 N'
-    return '0 1 N'
+    y = 0
+    for instruction in instructions:
+        if instruction == 'F':
+            y += 1
+    return f'0 {y} N'
 
 class TestRobotMoves(unittest.TestCase):
 
@@ -13,10 +15,11 @@ class TestRobotMoves(unittest.TestCase):
         output = move(instructions)
         self.assertEqual(output, '0 1 N')
 
-    def test_can_move_forward_twice(self):
-        instructions = 'FF'
+    def test_can_move_forward_n_times(self):
+        instructions = 'FFF'
         output = move(instructions)
-        self.assertEqual(output, '0 2 N')
+        self.assertEqual(output, '0 3 N')
+
         
 if __name__ == '__main__':
     unittest.main()
