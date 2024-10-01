@@ -30,9 +30,9 @@ def move(initial_position: str, instructions: str, grid_size: str, robot_scent: 
             if current_coordinates in robot_scent:
                 continue
             x, y = update_coordinates(orientation, x, y)
-            if x < 0 or y < 0 or x >= max_x or y >= max_y:
+            if x < 0 or y < 0 or x > max_x or y > max_y:
                 robot_scent.append(current_coordinates)
-                return f'{x} {y} {orientation} LOST'
+                return f'{current_coordinates} LOST'
         else:
             orientation = rotate(orientation, instruction)
     return f'{x} {y} {orientation}'
