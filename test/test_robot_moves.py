@@ -1,20 +1,6 @@
 import unittest
 
-from src.parser import parse
-from src.robot_instructions import rotate
-
-
-def move(initial_position: str, instructions: str) -> str:
-    x, y, orientation = parse(initial_position)
-    for instruction in instructions:
-        if instruction == 'F':
-            if orientation == 'E':
-                x += 1
-            elif orientation == 'N':
-                y += 1
-        else:
-            orientation = rotate(orientation, instruction)
-    return f'{x} {y} {orientation}'
+from src.robot_instructions import move
 
 
 class TestRobotMoves(unittest.TestCase):

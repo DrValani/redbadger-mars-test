@@ -2,7 +2,8 @@ import unittest
 
 from src.parser import parse
 
-## Assume that all input data is in the correct format
+# Assume that all input data is in the correct format
+
 
 class TestParseInitialPositionString(unittest.TestCase):
 
